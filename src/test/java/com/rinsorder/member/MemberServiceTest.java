@@ -1,12 +1,19 @@
 package com.rinsorder.member;
 
+import com.rinsorder.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class MemberServiceTest {
 
-    MemberRepository memberRepository = new MemoryMemberRepository();
-    MemberService memberService = new MemberServiceImpl(memberRepository);
+    MemberService memberService;
+
+    @BeforeEach
+    public void beforEach() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
 
     @Test
     void join() {
@@ -21,7 +28,4 @@ class MemberServiceTest {
         Assertions.assertThat(member).isEqualTo(findMember);
     }
 
-//    @Test
-    void findMember() {
-    }
 }
