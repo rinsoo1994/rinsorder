@@ -1,18 +1,16 @@
 package com.rinsorder;
 
-import com.rinsorder.discount.RateDiscountPolicy;
 import com.rinsorder.member.*;
 import com.rinsorder.order.Order;
 import com.rinsorder.order.OrderService;
-import com.rinsorder.order.OrderServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class OrderApp {
     public static void main(String[] args) {
-
-        AppConfig appConfig = new AppConfig();
-        // DI를 통한 의존성 주입
-        MemberService memberService = appConfig.memberService();
-        OrderService orderService = appConfig.orderService();
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+        OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
 
         // 맴버 객체 회원가입
         Member member = new Member(1L, Grade.VIP, "rinsoo");
