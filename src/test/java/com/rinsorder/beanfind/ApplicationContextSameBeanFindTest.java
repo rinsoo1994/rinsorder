@@ -64,7 +64,5 @@ public class ApplicationContextSameBeanFindTest {
         public DiscountPolicy discountPolicy(){
             return new RateDiscountPolicy();
         }
-
     }
-
 }
