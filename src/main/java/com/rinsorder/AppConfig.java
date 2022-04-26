@@ -16,6 +16,10 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     // OCP, SRP, DIP를 위반하지 않도록 하는 AppConfig
 
+    // @Bean memberService -> new MemoryMemberRepository()
+    // @Bean orderService -> new MemoryMemberRepository()
+    // 과연 MemoryMemberRepository 의 싱글톤이 깨질까 안깨질까~?
+
     @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());

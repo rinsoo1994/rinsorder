@@ -45,4 +45,6 @@ public class SingletonTest {
         OrderService orderService2 = ac.getBean(OrderService.class);
         Assertions.assertThat(orderService1).isSameAs(orderService2);
     }
+
+
 }
