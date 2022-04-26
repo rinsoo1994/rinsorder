@@ -3,6 +3,7 @@ package com.rinsorder.discount;
 import com.rinsorder.member.Grade;
 import com.rinsorder.member.Member;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 @Component
 public class RateDiscountPolicy implements DiscountPolicy{

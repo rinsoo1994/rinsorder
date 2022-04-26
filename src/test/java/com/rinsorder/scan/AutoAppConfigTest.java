@@ -1,4 +1,4 @@
-package scan;
+package com.rinsorder.scan;
 
 import com.rinsorder.AutoAppConfig;
 import com.rinsorder.member.MemberService;
