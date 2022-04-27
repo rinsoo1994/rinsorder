@@ -12,6 +12,7 @@ public class AutoAppConfigTest {
     @Test
     void basicScan() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+        System.out.println("here i am");
         MemberService memberBean = ac.getBean(MemberService.class);
         Assertions.assertThat(memberBean).isInstanceOf(MemberService.class);
     }

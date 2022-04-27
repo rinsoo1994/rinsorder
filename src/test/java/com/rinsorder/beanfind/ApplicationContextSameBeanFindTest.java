@@ -58,6 +58,7 @@ public class ApplicationContextSameBeanFindTest {
         @Bean
         public OrderService orderService(){
             return new OrderServiceImpl(memberRepository(), discountPolicy());
+//            return new OrderServiceImpl();
         }
 
         @Bean

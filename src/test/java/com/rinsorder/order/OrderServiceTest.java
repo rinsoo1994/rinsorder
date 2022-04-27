@@ -31,6 +31,6 @@ class OrderServiceTest {
         Order order = orderService.createOrder(member.getId(), "display", 300000);
         System.out.println(order.caculatePrice());
         System.out.println(order);
-        Assertions.assertThat(order.caculatePrice()).isEqualTo(299000);
+        Assertions.assertThat(order.caculatePrice()).isEqualTo(270000);
     }
 }
