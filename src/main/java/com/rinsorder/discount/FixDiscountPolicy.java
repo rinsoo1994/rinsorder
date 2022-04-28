@@ -1,8 +1,14 @@
 package com.rinsorder.discount;
 
+import com.rinsorder.annotation.MainDiscountPolicy;
 import com.rinsorder.member.Grade;
 import com.rinsorder.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
+@Component
+@MainDiscountPolicy
 public class FixDiscountPolicy implements DiscountPolicy{
     private final int discountFixAmount = 1000;
 
